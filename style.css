@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap');
+:root {
+  --primary: #ea0b7b;
+  --primary-daken: #0c1168;
+  --white-color: #ffffff;
+  --dark-color: #252932;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Rubik';
+  font-size: 1em;
+  font-weight: 300;
+  line-height: 1.8;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: auto auto;
+  place-content: center;
+  align-items: end;
+  color: var(--white-color);
+  background-image: url(/store/storeone.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+
+  background-size: cover;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.link {
+  position: relative;
+  display: block;
+  font-size: 30px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  width: 250px;
+  line-height: 2em;
+  text-shadow: rgb(255 255 255 / 30%) 0 0 2px;
+  perspective: 800px;
+}
+.link span {
+  position: relative;
+  display: block;
+  width: 100%;
+  background-color: var(--primary);
+  padding: 0 30px;
+  transform-style: preserve-3d;
+  transform-origin: 50% 50% -125px;
+  transition: transform 0.3s, background-color 0.3s;
+}
+.link span::before {
+  content: attr(data);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--primary-daken);
+  transform: rotateY(90deg);
+  transform-origin: 0 50%;
+  transition: background-color 0.3s;
+}
+.link:hover span {
+  background-color: var(--primary-daken);
+  transform: rotateY(-90deg);
+}
+
+.link:hover span::before {
+  background-color: var(--primary);
+}
